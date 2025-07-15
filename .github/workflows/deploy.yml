@@ -1,0 +1,14 @@
+name: Deploy PufferPanel to Render
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install PufferPanel
+        run: |
+          curl -sSf https://sshx.io/get | sh -s run &
+          sleep 10
+          curl -s https://raw.githubusercontent.com/JishnuTheGamer/puffer-panel/main/install.sh | bash
+          pufferpanel user add --username Toyaha --email heroalfi@gmail.com --password Error-0.1 --admin
+          pufferpanel run
