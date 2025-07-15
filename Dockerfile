@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-ENV DEBIAN FRONTEND-noninteractive
+ENV DEBIAN FRONTEND=noninteractive
 
 RUN apt-get update && \
 apt-get install -y tmate tzdata expect && \
